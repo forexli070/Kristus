@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kristus Portofolio</title>
+
+<style>
+body {
+margin:0;
+font-family: Arial, sans-serif;
+background:black;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+header {
+padding:40px;
+font-size:32px;
+font-weight:bold;
+background:linear-gradient(90deg,gold,orange);
+color:black;
+}
+
+.container {
+padding:20px;
+max-width:900px;
+margin:auto;
+}
+
+.verse {
+background:rgba(255,255,255,0.05);
+margin:15px;
+padding:20px;
+border-radius:10px;
+border:1px solid gold;
+transition:0.3s;
+}
+
+.verse:hover {
+transform:scale(1.05);
+background:rgba(255,215,0,0.1);
+}
+
+button {
+padding:10px 20px;
+font-size:18px;
+background:gold;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover {
+background:orange;
+}
+
+footer {
+margin-top:40px;
+padding:20px;
+background:#111;
+color:gold;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+✝ KRISTUS PORTOFOLIO ✝
+</header>
+
+<div class="container">
+
+<h2>Ayat Alkitab</h2>
+
+<div id="verses"></div>
+
+<button onclick="acak()">Ayat Acak</button>
+
+</div>
+
+<footer>
+Tuhan adalah terangku dan keselamatanku
+</footer>
+
+<script>
+
+const data = [
+
+"Yohanes 3:16 - Karena begitu besar kasih Allah akan dunia ini...",
+"Mazmur 23:1 - Tuhan adalah gembalaku, takkan kekurangan aku.",
+"Filipi 4:13 - Segala perkara dapat kutanggung di dalam Dia.",
+"Yeremia 29:11 - Sebab Aku mengetahui rancangan-rancangan apa.",
+"Mazmur 46:1 - Allah itu tempat perlindungan dan kekuatan.",
+"Yesaya 41:10 - Jangan takut, sebab Aku menyertai engkau.",
+"Roma 8:28 - Allah turut bekerja dalam segala sesuatu.",
+"Amsal 3:5 - Percayalah kepada Tuhan dengan segenap hatimu.",
+"Matius 7:7 - Mintalah, maka akan diberikan kepadamu.",
+"Mazmur 91:2 - Tuhanku, kubu pertahananku."
+
+];
+
+const container = document.getElementById("verses");
+
+function tampil() {
+
+container.innerHTML="";
+
+data.forEach(v=>{
+
+container.innerHTML += `<div class="verse">${v}</div>`;
+
+});
+
+}
+
+function acak(){
+
+const random = data[Math.floor(Math.random()*data.length)];
+
+container.innerHTML = `<div class="verse">${random}</div>`;
+
+}
+
+tampil();
+
+</script>
+
+</body>
+</html>
